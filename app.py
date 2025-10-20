@@ -69,9 +69,10 @@ def gen_crew_member(role, first_names, surnames):
     crew_member = f"{role}: {first_name} {surname}"
     return crew_member
 
-def gen_ship(crew_roles):
+def gen_ship(crew_roles, themes):
     ship_name = gen_ship_name(ship_prefixes, ship_suffixes)
     crew = []
+    theme = random.choice(theme)
     roles = crew_roles.copy()
     random.shuffle(roles)
     random_int = random.randint(15, 50)
@@ -91,7 +92,7 @@ def gen_ship(crew_roles):
                 if member.split(":")[0] in crew_roles else 999)
     crew_html = '<br>'.join(crew)
     crew_count = len(crew)
-    ship = f"<h2>{ship_name}</h2><p><b>Crew Count:</b> {crew_count}</p><p>{crew_html}</p>"
+    ship = f"<h2>{ship_name}</h2><p><b>Ship Theme:</b> {theme}</p><p><b>Crew Count:</b> {crew_count}</p><p>{crew_html}</p>"
 
     return ship
 
@@ -138,6 +139,7 @@ def home():
 # === START APP ===
 if __name__ == "__main__":
     app.run(debug=True)
+
 
 
 
