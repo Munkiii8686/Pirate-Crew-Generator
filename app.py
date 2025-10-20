@@ -104,9 +104,9 @@ def gen_ship(crew_roles, themes, traits):
 
     crew.sort(key=lambda member: crew_roles.index(member.split(":")[0])
                 if member.split(":")[0] in crew_roles else 999)
-    crew_html = '<br>'.join(crew)
+    crew_html = ''.join(f"<li>{member}<li>" for member in crew)
     crew_count = len(crew)
-    ship = f"<h2>{ship_name}</h2><p><b>Ship Theme:</b> {theme}</p><p><b>Crew Count:</b> {crew_count}</p><p>{crew_html}</p>"
+    ship = f"<h2>{ship_name}</h2><p><b>Ship Theme:</b> {theme}</p><p><b>Crew Count:</b> {crew_count}</p><ul>{crew_html}</ul>"
 
     return ship
 
@@ -153,6 +153,7 @@ def home():
 # === START APP ===
 if __name__ == "__main__":
     app.run(debug=True)
+
 
 
 
