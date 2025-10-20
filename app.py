@@ -112,7 +112,7 @@ def gen_ship(crew_roles, themes, traits):
 
 @app.route("/")
 def home():
-    ship_html = gen_ship(crew_roles)
+    ship_html = gen_ship(crew_roles, themes, traits)
     return f"""
     <html>
     <head>
@@ -153,6 +153,7 @@ def home():
 # === START APP ===
 if __name__ == "__main__":
     app.run(debug=True)
+
 
 
 
