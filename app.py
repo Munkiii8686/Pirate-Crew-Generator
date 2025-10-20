@@ -215,6 +215,12 @@ def home():
                 max-width: 900px;
                 margin: auto;
             }}
+            title {{
+                font-family: Pirata One, serif;
+                color: #ffffff;
+                text-align: centre;
+                padding: 30px;
+            }}
             h1, h2 {{
                 font-family: Pirata One, serif;
                 color: #000000;
@@ -272,6 +278,7 @@ def home():
 # === START APP ===
 if __name__ == "__main__":
     app.run(debug=True)
+
 
 
 
