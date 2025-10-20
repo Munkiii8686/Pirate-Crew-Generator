@@ -35,7 +35,12 @@ traits = ["scarred", "one-eyed", "peg-legged", "tattooed", "soft-voiced",
     "poker-faced", "humming constantly", "lisping", "fast with a blade",
     "deft with knots", "sleepwalker", "keeps a rosary", "chainsmoker",
     "keeps a secret", "night-vision", "loves dice", "collects teeth",
-    "never sleeps", "terrified of water", "wears lucky bones", "sings to storms"]
+    "never sleeps", "terrified of water", "wears lucky bones", "sings to storms",
+    "Loyal", "Brave", "Empathetic", "Honest", "Persistent",
+    "Kind", "Patient", "Respectful", "Generous", "Determined",
+    "Creative", "Adaptable", "Optimistic", "Resilient", "Curious",
+    "Selfish", "Impatient", "Manipulative", "Greedy", "Egotistical",
+    "Quiet", "Observant", "Methodical", "Spontaneous", "Witty"]
 backstory_bones = ["escaped a slaver’s hold",
     "lost their family to a sea monster",
     "served in a royal navy then deserted",
@@ -62,22 +67,31 @@ def gen_ship_name(ship_prefixes, ship_suffixes):
     suffix = random.choice(ship_suffixes)
     return (f"The {prefix} {suffix}")
 
-def gen_crew_member(role, first_names, surnames):
+def gen_crew_member(role, first_names, surnames, traits):
     first_name = random.choice(first_names)
     surname = random.choice(surnames)
+    traits_copy = traits.copy()
+    trait_num = random.randint(1, 3)
+    trait_list = []
+    for x in range(trait_num):
+        trait = random.choice(traits_copy)
+        trait_list.append(trait)
+        traits_copy.remove(trait)
+        
+    char_traits = ', '.join(trait_list)
 
-    crew_member = f"{role}: {first_name} {surname}"
+    crew_member = f"{role}: {first_name} {surname} | Traits: {char_traits}"
     return crew_member
 
-def gen_ship(crew_roles, themes):
+def gen_ship(crew_roles, themes, traits):
     ship_name = gen_ship_name(ship_prefixes, ship_suffixes)
     crew = []
-    theme = random.choice(theme)
+    theme = random.choice(themes)
     roles = crew_roles.copy()
     random.shuffle(roles)
     random_int = random.randint(15, 50)
 
-    captain = gen_crew_member("Captain", first_names, surnames)
+    captain = gen_crew_member("Captain", first_names, surnames, traits)
     crew.append(captain)
 
     if "Captain" in roles:
@@ -85,7 +99,7 @@ def gen_ship(crew_roles, themes):
 
     for i in range(random_int - 1):
         role = roles[i] if i < len(roles) else "Deckhand"
-        crew_member = gen_crew_member(role, first_names, surnames)
+        crew_member = gen_crew_member(role, first_names, surnames, traits)
         crew.append(crew_member)
 
     crew.sort(key=lambda member: crew_roles.index(member.split(":")[0])
@@ -139,6 +153,7 @@ def home():
 # === START APP ===
 if __name__ == "__main__":
     app.run(debug=True)
+
 
 
 
