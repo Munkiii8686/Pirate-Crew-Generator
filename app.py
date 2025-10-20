@@ -215,25 +215,29 @@ def home():
                 max-width: 900px;
                 margin: auto;
             }}
-            h1, h2 {{
+            title {{
                 font-family: Pirata One, serif;
                 color: #f0e9d2;
+                text-align: centre;
+                padding: 30px;
+            h2 {{
+                font-family: Pirata One, serif;
+                color: #FFD700;
                 text-align: centre;
                 padding: 30px;
             }}
             p, li {{
                 font-family: Georgia, serif;
-                color: #f0e9d2;
+                color: #000000;
                 text-align: justify;
                 padding: 30px;
-                line-height: 1.6;
             }}
             ul {{
                 list-style-type: none;
                 padding-left: 0;
             }}
             .ship-card {{
-                background-color: #f8f1d0;
+                background-color: #e6e8cf;
                 background-image: url("https://www.transparenttextures.com/patterns/aged-paper.png");
                 background-blend-mode: multiply;
                 border: 1px solid #3a506b;
@@ -271,6 +275,7 @@ def home():
 # === START APP ===
 if __name__ == "__main__":
     app.run(debug=True)
+
 
 
 
