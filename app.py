@@ -193,7 +193,7 @@ def gen_ship(crew_roles, themes, traits, ship_types):
     crew_html = ''.join(f"<li>{member}<li>" for member in crew)
     crew_count = len(crew)
     ship = f"<h2>{ship_name}</h2><p><b>Ship Type:</b> {ship_type}</p><p><b>Ship Theme:</b> {theme}</p><p><b>Crew Count:</b> {crew_count}</p><ul>{crew_html}</ul>"
-
+    ship = f"<div class='ship-card'>{ship}</div>"
     return ship
 
 @app.route("/")
@@ -226,11 +226,22 @@ def home():
                 color: #f0e9d2;
                 text-align: justify;
                 padding: 30px;
-                margin-bottom: 8px;
+                line-height: 1.6;
             }}
             ul {{
                 list-style-type: none;
                 padding-left: 0;
+            }}
+            .ship-card {{
+                background-color: #f8f1d0;
+                background-image: url("https://www.transparenttextures.com/patterns/aged-paper.png");
+                background-blend-mode: multiply;
+                border: 1px solid #3a506b;
+                border-radius: 12px;
+                padding: 20px;
+                margin: 20px auto;
+                max-width: 900px;
+                box-shadow: 0 0 10px rgba(0,0,0,0.5);
             }}
             button {{
                 margin-top: 20px;
@@ -260,6 +271,7 @@ def home():
 # === START APP ===
 if __name__ == "__main__":
     app.run(debug=True)
+
 
 
 
