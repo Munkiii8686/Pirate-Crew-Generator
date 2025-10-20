@@ -206,6 +206,7 @@ def home():
         <title>Pirate Ship Generator</title>
         <style>
             body {{
+                background-image: url('https://www.transparenttextures.com/patterns/aged-paper.png');
                 background-color: #0b132b;
                 color: #f0e9d2;
                 font-family: Pirata One, serif;
@@ -225,7 +226,6 @@ def home():
                 color: #f0e9d2;
                 text-align: justify;
                 padding: 30px;
-                line-height: 1.6;
                 margin-bottom: 8px;
             }}
             ul {{
@@ -260,6 +260,7 @@ def home():
 # === START APP ===
 if __name__ == "__main__":
     app.run(debug=True)
+
 
 
 
