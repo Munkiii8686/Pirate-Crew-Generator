@@ -211,6 +211,26 @@ def home():
                 font-family: Pirata One, serif;
                 text-align: justify;
                 padding: 30px;
+                max-width: 900px;
+                margin: auto;
+            }}
+            h1, h2 {{
+                font-family: Pirata One, serif;
+                color: #f0e9d2;
+                text-align: centre;
+                padding: 30px;
+            }}
+            p, li {{
+                font-family: Georgia, serif;
+                color: #f0e9d2;
+                text-align: justify;
+                padding: 30px;
+                line-height: 1.6;
+                margin-bottom: 8px;
+            }}
+            ul {{
+                list-style-type: none;
+                padding-left: 0;
             }}
             button {{
                 margin-top: 20px;
@@ -240,6 +260,7 @@ def home():
 # === START APP ===
 if __name__ == "__main__":
     app.run(debug=True)
+
 
 
 
