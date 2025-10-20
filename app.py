@@ -220,6 +220,7 @@ def home():
                 color: #f0e9d2;
                 text-align: centre;
                 padding: 30px;
+            }}
             h2 {{
                 font-family: Pirata One, serif;
                 color: #FFD700;
@@ -275,6 +276,7 @@ def home():
 # === START APP ===
 if __name__ == "__main__":
     app.run(debug=True)
+
 
 
 
