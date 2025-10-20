@@ -192,7 +192,7 @@ def gen_ship(crew_roles, themes, traits, ship_types):
                 if member.split(":")[0] in crew_roles else 999)
     crew_html = ''.join(f"<li>{member}</li>" for member in crew)
     crew_count = len(crew)
-    ship = f"<h1>{ship_name}</h1><p><b>Ship Type:</b> {ship_type}</p><p><b>Ship Theme:</b> {theme}</p><p><b>Crew Count:</b> {crew_count}</p><ul>{crew_html}</ul>"
+    ship = f"<h2>{ship_name}</h2><p><b>Ship Type:</b> {ship_type}</p><p><b>Ship Theme:</b> {theme}</p><p><b>Crew Count:</b> {crew_count}</p><ul>{crew_html}</ul>"
     ship = f"<div class='ship-card'>{ship}</div>"
     return ship
 
@@ -215,13 +215,13 @@ def home():
                 max-width: 900px;
                 margin: auto;
             }}
-            title {{
+            h1 {{
                 font-family: Pirata One, serif;
                 color: #ffffff;
                 text-align: centre;
                 padding: 30px;
             }}
-            h1, h2 {{
+            h2 {{
                 font-family: Pirata One, serif;
                 color: #000000;
                 text-align: centre;
@@ -278,6 +278,7 @@ def home():
 # === START APP ===
 if __name__ == "__main__":
     app.run(debug=True)
+
 
 
 
