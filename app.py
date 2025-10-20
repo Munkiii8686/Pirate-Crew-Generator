@@ -165,7 +165,7 @@ def gen_crew_member(role, first_names, surnames, traits):
         
     char_traits = ', '.join(trait_list)
 
-    crew_member = f"{role}: {first_name} {surname} | Traits: {char_traits}"
+    crew_member = f"<b>{role}:</b> {first_name} {surname} | <b>Traits:</b> {char_traits}"
     return crew_member
 
 def gen_ship(crew_roles, themes, traits, ship_types):
@@ -223,7 +223,7 @@ def home():
             }}
             h2 {{
                 font-family: Pirata One, serif;
-                color: #FFD700;
+                color: #000000;
                 text-align: centre;
                 padding: 30px;
             }}
@@ -232,6 +232,9 @@ def home():
                 color: #000000;
                 text-align: justify;
                 padding: 30px;
+                margin-top: 4px;
+                margin-bottom: 4px
+                line-height: 1.4;
             }}
             ul {{
                 list-style-type: none;
@@ -276,6 +279,7 @@ def home():
 # === START APP ===
 if __name__ == "__main__":
     app.run(debug=True)
+
 
 
 
